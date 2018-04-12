@@ -5,7 +5,7 @@ namespace cbtech\unsplash;
 use yii\base\Widget;
 use yii\helpers\Html;
 
-class HelloWidget extends Widget
+class UnsplashImagePicker extends Widget
 {
     public $message;
 
