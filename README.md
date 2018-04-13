@@ -23,6 +23,8 @@ to the require section of your `composer.json` file.
 
 Configuration
 ------------
+Add the following to your main.php config file in your Yii project.
+
 ```
 'modules' => [
 	'unsplash' => [
@@ -38,7 +40,27 @@ Configuration
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
+Once the extension AND module are installed, simply use it in your code by  :
 
 ```php
 <?= \cbtech\unsplash\UnsplashImagePicker::widget(); ?>```
+
+Use Javascript and jQuery to listen for the 'unsplashDownload' event.
+
+```javascript
+<script type="text/javascript">
+$(document).bind('unsplashDownload',"#unsplash-results",function(event, data){
+	console.log("Download Url = = " + data.downloadUrl);
+	console.log("Thumnail Url = = " + data.thumbnailUrl);
+
+	$.ajax({
+		"method":"POST",
+		"url":"/project/save-user-project-media-url-ajax",
+		"data":{downloadUrl: data.downloadUrl}
+	}).done(function(response){
+		$(".file-default-preview").empty().html("<img src='" + response.data.media.url + "' style='width:200px;height:200px;object-fit:cover;'/>");
+	});
+});
+</script>
+```
+ 
