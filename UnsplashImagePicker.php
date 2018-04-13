@@ -17,10 +17,10 @@ class UnsplashImagePicker extends Widget
         }
         
         \Crew\Unsplash\HttpClient::init([
-			'applicationId'	=> '24527',
-			'secret'		=> '98c356d5d1609d3748b098a4b9ff8ee2b6a5408b3018cf297c0f06c299b0486a',
-			'callbackUrl'	=> 'https://your-application.com/oauth/callback-MAKEONE',
-			'utmSource' => 'LeP Photo Extension'
+			'applicationId'	=> '{}',
+			'secret'		=> '{}',
+			'callbackUrl'	=> '{}',
+			'utmSource' => '{}'
 		]);
     }
 
