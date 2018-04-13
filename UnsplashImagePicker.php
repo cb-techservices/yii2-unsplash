@@ -14,12 +14,17 @@ class UnsplashImagePicker extends Widget
     public $page;
     public $per_page;
     public $orientation;
+    public $button_text;
 
     public function init()
     {
         parent::init();
         if ($this->message === null) {
             $this->message = 'Hello World';
+        }
+        
+        if($this->button_text === null){
+        	$this->button_text = "Choose photo from Unsplash";
         }
         
         HttpClient::$utmSource = "LeP Photo Extension";
@@ -40,7 +45,8 @@ class UnsplashImagePicker extends Widget
 				'search'=>$this->search,
 				'page'=>$this->page,
 				'per_page'=>$this->per_page,
-				'orientation'=>$this->orientation
+				'orientation'=>$this->orientation,
+				'button_text'=>$this->button_text
 		]);
     }
     

@@ -9,7 +9,7 @@ Modal::begin([
 	'header' => '',
 	'id'=>'unsplashModal',
 	'size'=>Modal::SIZE_LARGE,
-    'toggleButton' => ['label' => 'Pick from UnSplash','class'=>'btn btn-success','style'=>'']
+    'toggleButton' => ['label' => $button_text,'class'=>'btn btn-success','style'=>'']
 ]);
 ?>
 <div class="row">
