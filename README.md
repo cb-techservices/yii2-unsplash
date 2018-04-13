@@ -43,12 +43,13 @@ Usage
 Once the extension AND module are installed, simply use it in your code by  :
 
 ```php
-<?= \cbtech\unsplash\UnsplashImagePicker::widget(); ?>```
+<?= \cbtech\unsplash\UnsplashImagePicker::widget(); ?>
+```
 
 Use Javascript and jQuery to listen for the 'unsplashDownload' event.
 
 ```javascript
-<script type="text/javascript">
+
 $(document).bind('unsplashDownload',"#unsplash-results",function(event, data){
 	console.log("Download Url = = " + data.downloadUrl);
 	console.log("Thumnail Url = = " + data.thumbnailUrl);
@@ -61,6 +62,5 @@ $(document).bind('unsplashDownload',"#unsplash-results",function(event, data){
 		$(".file-default-preview").empty().html("<img src='" + response.data.media.url + "' style='width:200px;height:200px;object-fit:cover;'/>");
 	});
 });
-</script>
+
 ```
- 
