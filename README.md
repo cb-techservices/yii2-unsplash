@@ -26,11 +26,11 @@ Configuration
 ```
 'modules' => [
 	'unsplash' => [
-        'class' => 'frontend\modules\unsplash\UnsplashImagePickerModule',
+        'class' => 'cbtech\unsplash\UnsplashImagePickerModule',
         // ... other configurations for the module ...
         'params'=>[
-        	'applicationId'	=> '8aec781867c8b5eed30a15f649aadbec2004efb1daeb555515b7b5c056c7ad56',
-			'utmSource' => 'LeP Photo Extension',		
+        	'applicationId'	=> '{ACCESS_KEY}',
+			'utmSource' => '{UTM_SOURCE}',		
         ]
     ],	
 ],
