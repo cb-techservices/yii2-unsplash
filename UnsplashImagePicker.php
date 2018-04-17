@@ -6,6 +6,7 @@ namespace cbtech\unsplash;
 use yii\base\Widget;
 use yii\helpers\Html;
 use Crew\Unsplash\HttpClient;
+use cbtech\unsplash\assets\AppAsset;
 
 class UnsplashImagePicker extends Widget
 {
@@ -15,6 +16,7 @@ class UnsplashImagePicker extends Widget
     public $per_page;
     public $orientation;
     public $button_text;
+    public $button_class;
 
     public function init()
     {
@@ -27,12 +29,20 @@ class UnsplashImagePicker extends Widget
         	$this->button_text = "Choose photo from Unsplash";
         }
         
+    	if($this->button_class === null){
+        	$this->button_class = "btn btn-success";
+        }
+        
+        
         HttpClient::$utmSource = "LeP Photo Extension";
         \Crew\Unsplash\HttpClient::init([
 			'applicationId'	=> \Yii::$app->modules["unsplash"]['params']['applicationId'],
 			'utmSource' => \Yii::$app->modules["unsplash"]['params']['utmSource'],
 		]);
         $connection = HttpClient::$connection;
+        
+        //Load AppAssets
+        AppAsset::register($this->view);
     }
 
     public function run()
@@ -46,7 +56,8 @@ class UnsplashImagePicker extends Widget
 				'page'=>$this->page,
 				'per_page'=>$this->per_page,
 				'orientation'=>$this->orientation,
-				'button_text'=>$this->button_text
+				'button_text'=>$this->button_text,
+				'button_class'=>$this->button_class
 		]);
     }
     

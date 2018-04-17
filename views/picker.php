@@ -6,10 +6,12 @@ use yii\helpers\Html;
 ?>
 <?php 
 Modal::begin([
-	'header' => '',
+	'header' => '<h3 style="color:black;">Image Gallery</h3><h5>
+	Powered by <a target="_blank" href="https://unsplash.com/?utm_source=' . \Yii::$app->modules["unsplash"]['params']['utmSource'] . '&utm_medium=referral">Unsplash</a>
+</h5>',
 	'id'=>'unsplashModal',
 	'size'=>Modal::SIZE_LARGE,
-    'toggleButton' => ['label' => $button_text,'class'=>'btn btn-success','style'=>'']
+    'toggleButton' => ['label' => $button_text,'class'=> $button_class,'style'=>'']
 ]);
 ?>
 <div class="row">
@@ -25,7 +27,7 @@ Modal::begin([
 	<?= Html::dropDownList("UnsplashOrientation", $orientation, ["landscape"=>"Landscape","portrait"=>"Portrait"],['class'=>'form-control','id'=>'UnsplashOrientation'])?>
 	</div>
 </div>
-<div id="unsplash-results" style="width:100%;margin-top:20px;">
+<div id="unsplash-results" style="width:100%;margin-top:20px;min-height:600px;">
 <?= $this->render('_images',[
 		'pageResult'=>$pageResult,
 		'search'=>$search,
@@ -44,23 +46,32 @@ Modal::end();
 
 <script type="text/javascript">
 function searchPhotos(search, page, per_page, orientation){
+	var spinner = new Spinner({scale:2.0}).spin();
+	$("#unsplash-results").empty();
+	document.getElementById("unsplash-results").appendChild(spinner.el);
 	$.ajax({
 		"method":"GET",
 		"url":"/unsplash/ajax/search",
 		"data": {search: search, page: page, per_page: per_page, orientation: orientation}
 	}).done(function(response){
-		console.log(response);
+		spinner.stop();
+		spinner = null;
+// 		console.log(response);
 		$("#unsplash-results").empty().html(response.data.html);
 	});
 }
 
-function downloadImage(id){
+function getPhotoUrls(id, img){
+	var spinner = new Spinner({color:'#fff', scale:1.0}).spin();
+	$(img).parent().append(spinner.el);
 	$.ajax({
 		"method":"GET",
-		"url":"/unsplash/ajax/download-image",
+		"url":"/unsplash/ajax/get-photo-urls",
 		"data": {id: id}
 	}).done(function(response){
 // 		console.log(response);
+		spinner.stop();
+		spinner = null;
 		$("#unsplashModal").modal('hide');
 		$("#unsplash-results").trigger("unsplashDownload",[response.data]);
 	});

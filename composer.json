@@ -5,9 +5,9 @@
 	"keywords" : [
 		"yii2",
 		"extension",
-		" unsplash",
-		" unsplash api",
-		" widget"
+		"unsplash",
+		"unsplash api",
+		"widget"
 	],
 	"license" : "MIT",
 	"authors" : [{

@@ -53,15 +53,15 @@ class AjaxController extends Controller
 //         return $this->render('index');
     }
     
-    public function actionDownloadImage($id){
+    public function actionGetPhotoUrls($id){
     	\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
     	
     	$photo = Photo::find($id);
     	$downloadUrl = $photo->download();
-    	$thumbnailUrl = $photo->urls["thumb"];
+//     	$thumbnailUrl = $photo->urls["thumb"];
     	
 //     	\Yii::error(print_r($photo,true));
     	
-    	return ["returnCode"=>0,"returnCodeDescription"=>"Success","data"=>["downloadUrl"=>$downloadUrl,"thumbnailUrl"=>$thumbnailUrl]];
+    	return ["returnCode"=>0,"returnCodeDescription"=>"Success","data"=>["urls"=>$photo->urls,"downloadUrl"=>$downloadUrl]];
     }
 }
