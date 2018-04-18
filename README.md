@@ -80,4 +80,4 @@ public function actionSaveUserProjectMediaUrlAjax(){
 }
 ```
 
-<a href="./screenshots/Screenshot1.png" target="_blank"><img src="./screenshots/Screenshot1.png" width="500" alt="Yii2 Unsplash Image Picker"> </a>
+![Image of Yii2 Unsplash Image Picker](./screenshots/Screenshot1.png)
