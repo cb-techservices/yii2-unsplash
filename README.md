@@ -33,8 +33,8 @@ Add the following to your main.php config file in your Yii project.
         'class' => 'cbtech\unsplash\UnsplashImagePickerModule',
         // ... other configurations for the module ...
         'params'=>[
-			'applicationId'	=> '{ACCESS_KEY}',
-			'utmSource' => '{UTM_SOURCE}',
+        	'applicationId'	=> '{ACCESS_KEY}',
+        	'utmSource' => '{UTM_SOURCE}',
         ]
     ],	
 ],
