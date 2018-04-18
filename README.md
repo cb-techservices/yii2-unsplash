@@ -72,6 +72,7 @@ $(document).bind('unsplashDownload',"#unsplash-results",function(event, data){
 
 ```
 
+Example PHP action that receives the downloadUrl: 
 ```php
 public function actionSaveUserProjectMediaUrlAjax(){
 	$downloadUrl = \Yii::$app->request->post("downloadUrl"); //Download URL sent via $_POST
@@ -79,4 +80,4 @@ public function actionSaveUserProjectMediaUrlAjax(){
 }
 ```
 
-![Image of Yii2 Unsplash Image Picker](./screenshots/Screenshot1.png)
+<a href="./screenshots/Screenshot1.png" target="_blank"><img src="./screenshots/Screenshot1.png" width="500" alt="Yii2 Unsplash Image Picker"> </a>
