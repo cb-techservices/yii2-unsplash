@@ -1,6 +1,6 @@
-Yii2 UnSplash API Widget
+Yii2 Unsplash API Widget
 ========================
-Easily display an image picker with UnSplash images API.
+Easily display an image picker with Unsplash images API.
 
 Installation
 ------------
@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist carlb0329/yii2-unsplash "*"
+php composer.phar require --prefer-dist cb-techservices/yii2-unsplash "*"
 ```
 
 or add
 
 ```
-"carlb0329/yii2-unsplash": "*"
+"cb-techservices/yii2-unsplash": "*"
 ```
 
 to the require section of your `composer.json` file.
