@@ -1,6 +1,6 @@
-Yii2 Unsplash API Widget
+Yii2 Unsplash Extension
 ========================
-Easily display an image picker with Unsplash images API.
+This extension provides a Yii2 widget to display an image picker powered by Unsplash images API.
 
 Installation
 ------------
@@ -83,3 +83,14 @@ public function actionSaveUserProjectMediaUrlAjax(){
 ```
 
 ![Image of Yii2 Unsplash Image Picker](./screenshots/Screenshot1.png)
+
+## Acknowledgments
+Official Unsplash [PHP Library](https://github.com/unsplash/unsplash-php)
+
+[Unsplash Developer API](https://unsplash.com/developers) 
+
+![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
+
+## License
+
+Yii2 Unsplash Extension is available under the MIT license. See the LICENSE file for more info.
