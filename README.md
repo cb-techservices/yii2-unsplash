@@ -25,6 +25,8 @@ Configuration
 ------------
 Add the following to your main.php config file in your Yii project.
 
+**REQUIREMENT:** You must have a valid [developer account](http://google.com) and "App" set up with [Unsplash](https://unsplash.com) API.  Once created, use the app's Access Key and the UTM Source (aka Application Name) for your Yii configuration.
+
 ```
 'modules' => [
 	'unsplash' => [
