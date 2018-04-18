@@ -85,11 +85,9 @@ public function actionSaveUserProjectMediaUrlAjax(){
 ![Image of Yii2 Unsplash Image Picker](./screenshots/Screenshot1.png)
 
 ## Acknowledgments
-Official Unsplash [PHP Library](https://github.com/unsplash/unsplash-php)
-
-[Unsplash Developer API](https://unsplash.com/developers) 
-
-![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
+* Official Unsplash [PHP Library](https://github.com/unsplash/unsplash-php)
+* [Unsplash Developer API](https://unsplash.com/developers) 
+* [Yii2 Framework](https://github.com/yiisoft/yii2)  ![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
 
 ## License
 
