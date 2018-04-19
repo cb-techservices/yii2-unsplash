@@ -3,13 +3,14 @@
 use yii\bootstrap\Modal;
 use yii\helpers\Html;
 
+$unique_id = \Yii::$app->security->generateRandomString(6);
 ?>
 <?php 
 Modal::begin([
 	'header' => '<h3 style="color:black;">Image Gallery</h3><h5>
 	Powered by <a target="_blank" href="https://unsplash.com/?utm_source=' . \Yii::$app->modules["unsplash"]['params']['utmSource'] . '&utm_medium=referral">Unsplash</a>
 </h5>',
-	'id'=>'unsplashModal',
+	'id'=>'unsplashModal_' . $unique_id,
 	'size'=>Modal::SIZE_LARGE,
     'toggleButton' => ['label' => $button_text,'class'=> $button_class,'style'=>'']
 ]);
@@ -72,7 +73,7 @@ function getPhotoUrls(id, img){
 // 		console.log(response);
 		spinner.stop();
 		spinner = null;
-		$("#unsplashModal").modal('hide');
+		$("#unsplashModal_<?= $unique_id; ?>").modal('hide');
 		$("#unsplash-results").trigger("unsplashDownload",[response.data]);
 	});
 }
