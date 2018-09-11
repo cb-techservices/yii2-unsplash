@@ -17,6 +17,7 @@ class UnsplashImagePicker extends Widget
     public $orientation;
     public $button_text;
     public $button_class;
+    public $button_style;
 
     public function init()
     {
@@ -31,6 +32,10 @@ class UnsplashImagePicker extends Widget
         
     	if($this->button_class === null){
         	$this->button_class = "btn btn-success";
+        }
+        
+        if($this->button_style === null){
+        	$this->button_style = "";
         }
         
         
@@ -57,7 +62,8 @@ class UnsplashImagePicker extends Widget
 				'per_page'=>$this->per_page,
 				'orientation'=>$this->orientation,
 				'button_text'=>$this->button_text,
-				'button_class'=>$this->button_class
+				'button_class'=>$this->button_class,
+				'button_style'=>$this->button_style,
 		]);
     }
     

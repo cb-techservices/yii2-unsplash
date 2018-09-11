@@ -12,7 +12,7 @@ Modal::begin([
 </h5>',
 	'id'=>'unsplashModal_' . $unique_id,
 	'size'=>Modal::SIZE_LARGE,
-    'toggleButton' => ['label' => $button_text,'class'=> $button_class,'style'=>'']
+    'toggleButton' => ['label' => $button_text,'class'=> $button_class,'style'=>$button_style]
 ]);
 ?>
 <div class="row">

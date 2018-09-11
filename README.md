@@ -51,7 +51,8 @@ Once the extension AND module are installed, simply use it in your code by  :
 		"per_page"=>16,
 		"orientation"=>"landscape",
 		"button_text"=>"Choose photo from Unsplash",
-		"button_class"=>"btn btn-success"
+		"button_class"=>"btn btn-success",
+		"button_style"=>"margin-right:10px;",
 	]); ?>
 ```
 
